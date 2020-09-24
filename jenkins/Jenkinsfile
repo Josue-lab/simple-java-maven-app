@@ -16,5 +16,10 @@ pipeline {
                 sh 'mvn test'
             }
         }
+        stage('Archive Artifacts') {
+            steps {
+               archiveArtifacts artifacts: '/target/my-app-1.0-SNAPSHOT.jar'
+            }
+        }
     }
 }
